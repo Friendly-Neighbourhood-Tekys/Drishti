@@ -35,10 +35,6 @@ This app aims to make reporting and spreading the news of accidents and dangers 
 <img src="https://github.com/Friendly-Neighbourhood-Tekys/Drishti/blob/Front-End-v3/Screenshots/main.png">
 </p>
 
-<p align="center">
-<img src="https://i.ibb.co/Sxswg25/1.png"></a>
-</p>
-
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif"></a>
 
 ## Contributors

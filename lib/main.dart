@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:drishti/homeui.dart';
-import 'package:drishti/reportui.dart';
-import 'package:splashscreen/splashscreen.dart';
+import 'dart:async';
+import 'package:drishti/home.dart';
+import 'package:drishti/Report.dart';
 
 void main() => runApp(MyApp());
 
@@ -26,31 +26,59 @@ MaterialColor buildMaterialColor(Color color) {
   return MaterialColor(color.value, swatch);
 }
 
+const color1 = Color.fromARGB(255, 0, 0, 0);
+const color2 = Color.fromARGB(255, 68, 68, 68);
+const color3 = Color.fromARGB(255, 124, 201, 242);
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: '?',
-      theme: ThemeData(
-        primarySwatch: buildMaterialColor(Color.fromARGB(255, 0, 0, 0)),
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: SplashScreen(
-        seconds: 2,
-        navigateAfterSeconds: HomePage(),
-        title: new Text(
-          'Drishti',
-          style: TextStyle(
-              color: Color.fromRGBO(0, 0, 0, 1),
-              fontFamily: 'Comfortaa',
-              fontSize: 36,
-              letterSpacing:
-                  0 /*percentages not used in flutter. defaulting to zero*/,
-              fontWeight: FontWeight.normal,
-              height: 1),
+        title: 'Drishti',
+        theme: ThemeData(
+          primarySwatch: buildMaterialColor((color3)),
+          visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        backgroundColor: Color.fromARGB(255, 255, 255, 255),
-      ),
+        debugShowCheckedModeBanner: false,
+        home: Splashscreen());
+  }
+}
+
+class Splashscreen extends StatefulWidget {
+  @override
+  _SplashscreenState createState() => _SplashscreenState();
+}
+
+class _SplashscreenState extends State<Splashscreen> {
+  @override
+  void initState() {
+    super.initState();
+    Timer(
+        Duration(seconds: 4),
+        () => Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => HomePage())));
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: Container(
+          padding: EdgeInsets.only(top: 0),
+          alignment: Alignment.center,
+          color: Colors.white,
+          child: Text(
+            'Drishti \n',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+                color: Color.fromRGBO(0, 0, 0, 1),
+                fontFamily: 'Comfortaa',
+                fontSize: 36,
+                letterSpacing:
+                    0 /*percentages not used in flutter. defaulting to zero*/,
+                fontWeight: FontWeight.normal,
+                height: 1),
+          )),
     );
   }
 }
@@ -63,10 +91,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int selectedPage = 0;
 
-  final _pageOptions = [
-    MyHomePage(),
-    reportui(),
-  ];
+  final _pageOptions = [MyHomePage(), reportui()];
 
   @override
   Widget build(BuildContext context) {
@@ -78,11 +103,11 @@ class _HomePageState extends State<HomePage> {
             BottomNavigationBarItem(
                 icon: Icon(Icons.home, size: 30), label: 'Home'),
             BottomNavigationBarItem(
-                icon: Icon(Icons.add_location_alt, size: 30), label: 'Report'),
+                icon: Icon(Icons.add_location, size: 30), label: 'Report'),
           ],
-          selectedItemColor: Colors.black,
+          selectedItemColor: color3,
           elevation: 5.0,
-          unselectedItemColor: Colors.black38,
+          unselectedItemColor: Colors.black54,
           currentIndex: selectedPage,
           backgroundColor: Colors.white,
           onTap: (index) {

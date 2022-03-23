@@ -7,7 +7,7 @@ Drishti is a simple mobile application created as a project for YIP KDISC and Go
 This app aims to make reporting and spreading the news of accidents and dangers easier and effective. 
 
 ## The Problem
-  One of main reason of accidents and deaths caused by snapped power lines and broken pipelines is ts the lack of a way of effectively inform the locality about this incident, many walk into these traps withot knowing.
+  One of main reason of accidents and deaths caused by snapped power lines and broken pipelines is ts the lack of a way to effectively inform the locality about this incident, many walk into these traps withot knowing.
   
 ## The solution
   Drishti offers a simple and easy platform to report and get alerts on events on our locality.It will also redirect the cases of snapped lines and cables to respective authorities.

@@ -24,7 +24,7 @@ This app aims to make reporting and spreading the news of accidents and dangers 
 ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
 
 ## Still in Development
-- Front End on progress
+- Front End v3...
 - Back End (still working on it)
 
 ## Screenshots
